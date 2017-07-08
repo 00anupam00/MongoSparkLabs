@@ -1,8 +1,5 @@
-package com.labs.Mongo;
+package com.labs.mongo;
 
-import com.labs.Mongo.MongoCRUDOperations.MongoCRUD;
-import com.labs.Mongo.MongoCRUDOperations.MongoTransformations;
-import com.mongodb.spark.rdd.api.java.JavaMongoRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.sql.SparkSession;
 
@@ -18,9 +15,9 @@ public class ApplicationConfig {
         return SparkSession
                 .builder()
                 .master("local[*]")
-                .appName("Mongo Spark Demo")
-                .config("spark.mongodb.input.uri", "mongodb://127.0.0.1:8010/mongoSpark.EVA_")
-                .config("spark.mongodb.output.uri", "mongodb://127.0.0.1:8010/mongoSpark.EVA_")
+                .appName("mongo Spark Demo")
+                .config("spark.mongodb.input.uri", "mongodb://127.0.0.1:27017/mongoSpark.EVA_")
+                .config("spark.mongodb.output.uri", "mongodb://127.0.0.1:27017/mongoSpark.EVA_")
                 .getOrCreate();
     }
 
@@ -29,10 +26,9 @@ public class ApplicationConfig {
     }
 
     public static void main(String[] args) {
-        JavaMongoRDD mongoRDD= new MongoCRUD().loadMongoDoc();
-        new MongoTransformations(mongoRDD).breakoutCrew();
 
-        System.out.println("** All Transformaions Complete. **");
+
+        System.out.println("** All Transformations Complete. **");
 
 
     }
