@@ -12,7 +12,6 @@ import org.apache.spark.sql.SaveMode;
 import org.bson.Document;
 import scala.Option;
 
-import java.io.File;
 
 /**
  * Created by anupamrakshit on 27/04/17.
@@ -21,11 +20,18 @@ public class MongoCRUD {
 
     private String mongo_connection= Constants.Mongo_URL+Constants.Mongo_DATABASE_NAME+"."+Constants.Mongo_COLLECTION_NAME;
 
+    /**
+     * Read from MongoDB
+     * @return JavaMongoRDD
+     */
     public JavaMongoRDD readMongoDoc(){
-        JavaMongoRDD<Document> eva= MongoSpark.load(ApplicationConfig.jvc);
+        JavaMongoRDD<Document> eva= MongoSpark.load(ApplicationConfig.getJavaSparkContext());
         return eva;
     }
 
+    /**
+     * Write to MongoDB
+     */
     public void writeToMongo(){
         Dataset<Row> csvDs= ApplicationConfig.getSparkSession().sqlContext()
                 .read()
