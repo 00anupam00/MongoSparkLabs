@@ -15,8 +15,16 @@ public class MongoCrudTest {
 	JavaMongoRDD mongoRDD;
 
 	@Test
-	public void testShowFirstDoc(){
-		mongoRDD= new MongoCRUD().loadMongoDoc();
+	public void testWritetomongoDB(){
+		new MongoCRUD().writeToMongo();
 		System.out.println("First sample doc: "+mongoRDD.first());
 	}
+
+	@Test
+	public void testShowFirstDoc(){
+		mongoRDD= new MongoCRUD().readMongoDoc();
+		System.out.println("First sample doc: "+mongoRDD.first());
+	}
+
+
 }

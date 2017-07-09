@@ -14,7 +14,7 @@ public class MongoTransformationsTest {
 
 	@Before
 	public void setUp(){
-		mongoRDD= new MongoCRUD().loadMongoDoc();
+		mongoRDD= new MongoCRUD().readMongoDoc();
 		System.out.println("First sample doc: "+mongoRDD.first());
 	}
 

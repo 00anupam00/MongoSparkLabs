@@ -1,5 +1,6 @@
 package com.labs.mongo;
 
+import com.labs.mongo.commons.Constants;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.sql.SparkSession;
 
@@ -16,7 +17,7 @@ public class ApplicationConfig {
                 .builder()
                 .master("local[*]")
                 .appName("mongo Spark Demo")
-                .config("spark.mongodb.input.uri", "mongodb://127.0.0.1:27017/mongoSpark.EVA_")
+                .config("spark.mongodb.input.uri", Constants.Mongo_URL+ Constants.Mongo_DATABASE_NAME + "." +Constants.Mongo_COLLECTION_NAME)
                 .config("spark.mongodb.output.uri", "mongodb://127.0.0.1:27017/mongoSpark.EVA_")
                 .getOrCreate();
     }
