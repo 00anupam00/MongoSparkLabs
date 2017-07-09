@@ -27,7 +27,11 @@ public class MongoCRUD {
     }
 
     public void writeToMongo(){
-        Dataset<Row> csvDs= ApplicationConfig.getSparkSession().sqlContext().read().format("csv").load("src/main/resources/data/EVA_.csv");
+        Dataset<Row> csvDs= ApplicationConfig.getSparkSession().sqlContext()
+                .read()
+                .format("csv")
+                .option("header", "true") //assumes first row as header
+                .load("src/main/resources/data/EVA_.csv");
         MongoSpark.save(
                 csvDs.write().mode(SaveMode.Overwrite),
                 new WriteConfig(Constants.Mongo_DATABASE_NAME, Constants.Mongo_COLLECTION_NAME, Option.apply(mongo_connection), 20,
