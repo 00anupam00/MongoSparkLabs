@@ -1,5 +1,7 @@
 # MongoSparkLabs
 ## Initial Idea!
+
+###MongoDbSpark
 1. Connect to MongoDb
   1.1 Read from csv and Load to MongoDb
   1.2 Read from MongoDb
@@ -9,3 +11,6 @@
 5. Use Spark to ingest/migrate data from any other databases to MongoDb[*future*]
   5.1. Use custom libraries for this purpose to read the datasource.
 6. Repeat from step 2.[*future*]
+
+
+###openNlpDemo
