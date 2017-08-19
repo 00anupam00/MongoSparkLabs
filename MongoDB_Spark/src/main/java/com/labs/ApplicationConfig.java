@@ -1,7 +1,7 @@
-package com.labs.Mongo;
+package com.labs;
 
-import com.labs.Mongo.MongoCRUDOperations.MongoCRUD;
-import com.labs.Mongo.MongoCRUDOperations.MongoTransformations;
+import com.labs.mongo.CRUD.MongoCRUD;
+import com.labs.mongo.CRUD.MongoTransformations;
 import com.mongodb.spark.rdd.api.java.JavaMongoRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.sql.SparkSession;
