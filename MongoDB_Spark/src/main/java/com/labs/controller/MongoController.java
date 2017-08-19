@@ -1,6 +1,6 @@
 package com.labs.controller;
 
-import com.labs.mongo.crud.MongoCRUD;
+import com.labs.mongo.CRUD.MongoCRUD;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,11 +18,11 @@ public class MongoController {
 	MongoCRUD crud;
 
 	@RequestMapping(value = "/data", method = RequestMethod.GET)
-	public ResponseEntity getMongoData(){
+	public String getMongoData(){
 		try{
-			return ResponseEntity.ok(crud.readMongoDoc().take(100));
+			return crud.readMongoDoc().take(50).toString();
 		}catch (Exception e){
-			return new ResponseEntity(HttpStatus.EXPECTATION_FAILED);
+			return "error";
 		}
 	}
 }

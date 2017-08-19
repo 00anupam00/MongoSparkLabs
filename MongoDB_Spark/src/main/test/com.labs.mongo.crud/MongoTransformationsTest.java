@@ -1,5 +1,7 @@
 package com.labs.mongo.crud;
 
+import com.labs.mongo.CRUD.MongoCRUD;
+import com.labs.mongo.CRUD.MongoTransformations;
 import com.mongodb.spark.rdd.api.java.JavaMongoRDD;
 import org.junit.Before;
 import org.junit.Test;

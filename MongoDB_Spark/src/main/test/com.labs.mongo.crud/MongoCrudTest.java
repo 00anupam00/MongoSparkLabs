@@ -1,5 +1,6 @@
 package com.labs.mongo.crud;
 
+import com.labs.mongo.CRUD.MongoCRUD;
 import com.mongodb.spark.rdd.api.java.JavaMongoRDD;
 import org.junit.Test;
 
@@ -22,6 +23,7 @@ public class MongoCrudTest {
 	@Test
 	public void testShowFirstDoc(){
 		mongoRDD= new MongoCRUD().readMongoDoc();
+		System.out.println("----------------Result--------------------");
 		System.out.println("First sample doc: "+mongoRDD.first());
 	}
 }
