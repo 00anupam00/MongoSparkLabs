@@ -1,12 +1,13 @@
 package com.labs.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by anupamrakshit on 15/08/17.
  */
-@RestController
+@Controller
 @SessionAttributes("name")
 public class LoginController {
 
@@ -17,7 +18,7 @@ public class LoginController {
 	}
 
 
-	@RequestMapping(value="/", method = RequestMethod.GET)
+	@RequestMapping(value="/", method = RequestMethod.POST)
 	public String showWelcomePage(ModelMap model, @RequestParam String name, @RequestParam String password){
 
 		if (validateUser(name, password)) {
@@ -32,8 +33,7 @@ public class LoginController {
 	}
 
 	private boolean validateUser(String userid, String password) {
-		// in28minutes, dummy
-		return userid.equalsIgnoreCase("in28minutes")
-				&& password.equalsIgnoreCase("dummy");
+		return userid.equalsIgnoreCase("anupam")
+				&& password.equalsIgnoreCase("rakshit");
 	}
 }
