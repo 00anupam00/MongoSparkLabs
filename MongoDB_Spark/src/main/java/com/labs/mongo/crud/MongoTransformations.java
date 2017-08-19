@@ -1,14 +1,10 @@
 package com.labs.mongo.CRUD;
 
 import com.mongodb.spark.rdd.api.java.JavaMongoRDD;
-import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.sql.Dataset;
-import org.bson.Document;
 import scala.Tuple2;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**

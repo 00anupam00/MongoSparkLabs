@@ -3,15 +3,9 @@ package com.labs.mongo.CRUD;
 import com.labs.mongo.ApplicationConfig;
 import com.labs.mongo.commons.Constants;
 import com.mongodb.spark.MongoSpark;
-import com.mongodb.spark.config.WriteConcernConfig;
-import com.mongodb.spark.config.WriteConfig;
 import com.mongodb.spark.rdd.api.java.JavaMongoRDD;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SaveMode;
 import org.bson.Document;
 import org.springframework.stereotype.Service;
-import scala.Option;
 
 
 /**
