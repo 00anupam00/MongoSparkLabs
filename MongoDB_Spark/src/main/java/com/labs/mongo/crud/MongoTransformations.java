@@ -1,4 +1,4 @@
-package com.labs.mongo.crud;
+package com.labs.mongo.CRUD;
 
 import com.mongodb.spark.rdd.api.java.JavaMongoRDD;
 import org.apache.spark.api.java.JavaPairRDD;

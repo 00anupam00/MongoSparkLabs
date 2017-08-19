@@ -1,4 +1,4 @@
-package com.labs.mongo.crud;
+package com.labs.mongo.CRUD;
 
 import com.labs.mongo.ApplicationConfig;
 import com.labs.mongo.commons.Constants;
