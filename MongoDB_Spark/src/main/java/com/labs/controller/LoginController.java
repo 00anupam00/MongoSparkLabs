@@ -5,9 +5,10 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 /**
+ * This class uses Spring MVC approach
  * Created by anupamrakshit on 15/08/17.
  */
-@Controller
+
 @SessionAttributes("name")
 public class LoginController {
 

@@ -10,8 +10,10 @@ import { RouterModule } from "@angular/router";
 import { HeroService } from "./hero.service";
 import { DashboardComponent } from "./dashboard.component";
 
+import { AppRoutingModule } from "./app-routing.module";
 
-
+//import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+//import { InMemoryDataService }  from './in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -24,29 +26,9 @@ import { DashboardComponent } from "./dashboard.component";
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([
-      {
-        path: 'heroes',
-        component: HeroesComponent
-      },
-      {
-        path: 'dashboard',
-        component: DashboardComponent
-      },
-      {
-        path: '',
-        redirectTo: 'dashboard',
-        pathMatch: 'full'
-      },
-      {
-        path: 'detail/:id',
-        component: HeroDetailComponent
-      }
-    ])
+    AppRoutingModule
   ],
-  providers: [
-    HeroService
-  ],
+  providers: [HeroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,6 +5,9 @@ import { HEROES } from './mock-hero';
 
 @Injectable()
 export class HeroService{
+    private url = '/getData';
+
+
     getHeroes(): Promise<Hero[]> {
         return Promise.resolve(HEROES);
     }
